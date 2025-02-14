@@ -47,19 +47,21 @@
             color: white;
         }
           .answers {
-            padding: 10px;
-            background-color: #f8f9fa;
-            border: 1px solid #ddd;
-            position: fixed;
-            top: 10%;
-             left: 50%;
-            transform: translate(-50%, -10%);
-            z-index: 1000;
-            width: 60%;
-           /* max-height: 70vh; entfernt */
-             display: none;
-           overflow: auto;
-        }
+    padding: 20px; /* Mehr Innenabstand für besseren Inhalt */
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    position: fixed;
+    top: 5%; /* Weiter oben positioniert */
+    left: 50%;
+    transform: translate(-50%, -5%); /* Anpassung an die neue Höhe */
+    z-index: 1000;
+    width: 80%; /* Breiteres Modul */
+    max-height: 85vh; /* Höheres Modul */
+    overflow-y: auto;
+    display: none;
+    border-radius: 10px; /* Optional: Abgerundete Ecken für ein moderneres Aussehen */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2); /* Optional: Schatten für bessere Sichtbarkeit */
+}
          .floating-buttons {
             position: fixed;
             bottom: 20px;
@@ -125,12 +127,32 @@
              overflow-y: auto;
               margin: 10px 0;
        }
-       .image-wrapper img{
-         max-width: 100%;
-        max-height: 400px;
-         display: block;
-         margin: 0 auto;
-    }
+     .image-wrapper img {
+    max-width: 100%;
+    max-height: 600px; /* Erhöhe die maximale Höhe */
+    display: block;
+    margin-left: 0; /* Links bündig */
+    margin-right: auto; /* Automatische Anpassung nach rechts */
+}
+.btn-special {
+    display: block; /* Damit der Button die volle Breite nutzt */
+    width: 400px; /* Manuell breiter machen */
+    height: 60px; /* Länger machen */
+    padding: 15px 20px; /* Größere Innenabstände */
+    text-align: center; /* Links bündig ausrichten */
+    margin: 10px 0; /* Nur vertikale Abstände */
+    background-color: #1A3A7A; /* Dunkelblau */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Größere Schrift */
+}
+.btn-special:hover {
+    background-color: #d9a600; /* Gold für Hover */
+}
+
     </style>
 </head>
 <body class="dark-mode">
@@ -154,7 +176,10 @@
             {
         "question": "De ce veniți la MPU? De ce sunteți astăzi aici?",
         "answer": `
-        <p><strong>Sunt aici la MPU pentru că:<strong></p>
+ <div id="video-wrapper">
+     <iframe width="560" height="315" src="https://www.youtube.com/embed/AI3ubilhGP4?si=KoSDIh2VM-1uIysk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+       <p><strong>Sunt aici la MPU pentru că:<strong></p>
         <ul>
             <li>Am condus sub influența alcoolului</li>
             <li>Nu am respectat legea</li>
@@ -173,8 +198,14 @@
             <li>M-am schimbat</li>
             <li>Acum sunt capabil să conduc responsabil</li>
         </ul>
-        <p>AI/KI AJUTOR: <a href="https://chatgpt.com/g/g-675b4ab62c108191a1479b587cf22131-asistentdinamicmincu" target="_blank">https://chatgpt.com/g/g-675b4ab62c108191a1479b587cf22131-asistentdinamicmincu</a></p>
-        
+       <div class="image-wrapper">
+        <img src='https://cdn.gamma.app/fhpleqvbjim2f32/9492d165359e4bfbbd64372f0d6ddb3b/original/image.png' alt='Descrierea imaginii' class='answer-image'>
+         </div>
+      <div style="text-align: center;">
+       <button class="btn btn-special" onclick="window.open('https://chatgpt.com/g/g-675b4ab62c108191a1479b587cf22131-asistentdinamicmincu', '_blank')">
+        DESCHIDE AI/KI AJUTOR!
+       </button>
+       </div>
     `
     },
     {
@@ -191,7 +222,11 @@
     },
   {
   "question": "Descrieți ziua delictului din punctul dvs. de vedere cu data și ora?",
-  "answer": "<p><strong>La data de 04.11.2022, Vineri, către orele 14:05,</strong> am condus pe strada Heidecker Strasse în Hilpoltstein, deși nu am fost în stare să conduc ca urmare a consumului anterior de alcool.</p> <ul> <li>Am atins mașina din fața mea, un autocamion Daimler al persoanei păgubite Brandl.</li> <li>Am părăsit carosabilul și am lovit o placă publicitară a firmei August Tiefenbacher Aussenwerbung GmbH.</li> <li>Am lovit și gardul proprietății al persoanei păgubite Sussbauer.</li> </ul> <p><strong>Pagube produse:</strong></p> <ul> <li>La placa publicitară: 3.372,20 Euro</li> <li>La gard: aproximativ 500 Euro</li> </ul> <p><strong>Proba de sânge:</strong> La ora 15:17, valoare 2,81 Promile.</p> <p><strong>Consumul de alcool:</strong></p> <ul> <li>Începând de Joi, 03.11.2022, ora 17:00, până la 03:00: 12 sticle de bere (6 Litri de bere, 5%) și jumătate de sticlă de vodcă (0.5 Litri, 40%).</li> <li>Vineri, 04.11.2022, începând de la ora 12:00: două beri și restul de vodcă.</li> </ul> <p><strong>Total consumat:</strong> 14 sticle de bere și 0,5 Litri de vodcă.</p>"
+  "answer":  ` "<p><strong>La data de 04.11.2022, Vineri, către orele 14:05,</strong> am condus pe strada Heidecker Strasse în Hilpoltstein, deși nu am fost în stare să conduc ca urmare a consumului anterior de alcool.</p> <ul> <li>Am atins mașina din fața mea, un autocamion Daimler al persoanei păgubite Brandl.</li> <li>Am părăsit carosabilul și am lovit o placă publicitară a firmei August Tiefenbacher Aussenwerbung GmbH.</li> <li>Am lovit și gardul proprietății al persoanei păgubite Sussbauer.</li> </ul> <p><strong>Pagube produse:</strong></p> <ul> <li>La placa publicitară: 3.372,20 Euro</li> <li>La gard: aproximativ 500 Euro</li> </ul> <p><strong>Proba de sânge:</strong> La ora 15:17, valoare 2,81 Promile.</p> <p><strong>Consumul de alcool:</strong></p> <ul> <li>Începând de Joi, 03.11.2022, ora 17:00, până la 03:00: 12 sticle de bere (6 Litri de bere, 5%) și jumătate de sticlă de vodcă (0.5 Litri, 40%).</li> <li>Vineri, 04.11.2022, începând de la ora 12:00: două beri și restul de vodcă.</li> </ul> <p><strong>Total consumat:</strong> 14 sticle de bere și 0,5 Litri de vodcă.</p>"
+<div class="image-wrapper">
+ <img src='https://cdn.gamma.app/fhpleqvbjim2f32/8bf801eaec5a49d896ce30cabf5957df/original/Screenshot-2025-02-12-183548.jpg' alt='Descrierea imaginii' class='answer-image'>
+   </div>
+`
 },
 
     {
@@ -207,18 +242,18 @@
     {
         "question": "Cum ați crezut că mai puteți conduce? Nu ați simțit influența alcoolului?",
         "answer": `
-        <p><strong>Am vrut inițial să dormim acolo, dar m-am hotărât, \n\ndin confort, să conduc spre casă. <strong></p>
+        <p><strong>Am vrut inițial să las mașină acolo unde a fost parcată, dar m-am hotărât, \n\ndin confort, să conduc spre casă. <strong></p>
         <p>Decizia, clar, a fost greșită și iresponsabilă, am făcut ceva ilegal, conducând sub influența alcoolului. Am făcut un accident!</p>
-        <div id="video-wrapper">
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/mNoqKr11UjI?si=CNuhCHvJ-LesuUp4&start=5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+       <div class="image-wrapper">
+      <img src='https://cdn.gamma.app/fhpleqvbjim2f32/9c7de0553ad94030b938d6a9348f4f90/original/Screenshot-2025-02-12-195751.jpg' alt='Descrierea imaginii' class='answer-image'>
+     </div>
     `
     },
     {
         "question": "Ați crezut că mai puteți conduce în siguranță?",
         "answer": `
-        <p>Acum înțeleg că siguranța circulației este cel mai important lucru.  Ar fi trebuit să refuz și să spun nu. Îmi pare foarte rău pentru cele întâmplate! </p>
         <p>Da, m-am simțit în stare să conduc. Din perspectiva de astăzi, desigur, nu a fost cazul!</p>
+         <p>Acum înțeleg că siguranța circulației este cel mai important lucru.  Ar fi trebuit să nu fi condus și să spun nu. Îmi pare foarte rău pentru cele întâmplate! </p>
          <div id="video-wrapper">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Of7WcEjgIhI?si=ZYKeKjbYM5eRmXRP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
          </div>
@@ -254,7 +289,10 @@
             <div id="video-wrapper">
              <iframe width="560" height="315" src="https://www.youtube.com/embed/iv6VNDkzrnk?si=IGa18429gDWiHEvO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
-    `
+  <div class="image-wrapper">
+            <img src='https://cdn.gamma.app/fhpleqvbjim2f32/2ee284b916b9450b8850363064bc479e/original/SENTIMENTEFLORIN.jpg' alt='Efecte ale alcoolului asupra capacității de conducere' class='answer-image'>
+  </div>
+   `
 },
            {
             "question": "Cum v-ați descurcat cu alcoolul după delict? Cine sau ce te-a motivat să-ți schimbi comportamentul? Care a fost punctul de cotitură?",
@@ -321,7 +359,12 @@
       <img src='https://cdn.gamma.app/fhpleqvbjim2f32/02464c5eac4a48f190a112e6129b9ec4/original/Cat-si-cat-de-des-ati-consumat-Trecut.png' alt='Descrierea imaginii' class='answer-image'>
     </div>
     <iframe src=\"https://zaha175.github.io/ConsumINTIMP/\" width=\"100%\" height=\"400px\" style=\"border:none;\"></iframe>
-    <p><a href=\"https://zaha175.github.io/ConsumINTIMP/\" target=\"_blank\">https://zaha175.github.io/ConsumINTIMP/</a></p>
+  <div style="text-align: center;">
+    <button class="btn btn-special" onclick="window.open('https://zaha175.github.io/ConsumINTIMP/', '_blank')">
+        DESCHIDE ConsumINTIMP!
+    </button>
+</div>
+   <p><a href=\"https://zaha175.github.io/ConsumINTIMP/\" target=\"_blank\">https://zaha175.github.io/ConsumINTIMP/</a></p>
   `
 },
 
